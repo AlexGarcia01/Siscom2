@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditRecursoAsignadoProyectoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditRecursoAsignadoProyectoLabel_idRECURSOASIGNADOPROYECTO}" for="idRECURSOASIGNADOPROYECTO" />
+                    <h:inputText id="idRECURSOASIGNADOPROYECTO" value="#{recursoAsignadoProyectoController.selected.idRECURSOASIGNADOPROYECTO}" title="#{bundle.EditRecursoAsignadoProyectoTitle_idRECURSOASIGNADOPROYECTO}" required="true" requiredMessage="#{bundle.EditRecursoAsignadoProyectoRequiredMessage_idRECURSOASIGNADOPROYECTO}"/>
+                    <h:outputLabel value="#{bundle.EditRecursoAsignadoProyectoLabel_fechaInicio}" for="fechaInicio" />
+                    <h:inputText id="fechaInicio" value="#{recursoAsignadoProyectoController.selected.fechaInicio}" title="#{bundle.EditRecursoAsignadoProyectoTitle_fechaInicio}" required="true" requiredMessage="#{bundle.EditRecursoAsignadoProyectoRequiredMessage_fechaInicio}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditRecursoAsignadoProyectoLabel_fechaFin}" for="fechaFin" />
+                    <h:inputText id="fechaFin" value="#{recursoAsignadoProyectoController.selected.fechaFin}" title="#{bundle.EditRecursoAsignadoProyectoTitle_fechaFin}" required="true" requiredMessage="#{bundle.EditRecursoAsignadoProyectoRequiredMessage_fechaFin}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditRecursoAsignadoProyectoLabel_superior}" for="superior" />
+                    <h:inputText id="superior" value="#{recursoAsignadoProyectoController.selected.superior}" title="#{bundle.EditRecursoAsignadoProyectoTitle_superior}" />
+                    <h:outputLabel value="#{bundle.EditRecursoAsignadoProyectoLabel_porcentageTiempo}" for="porcentageTiempo" />
+                    <h:inputText id="porcentageTiempo" value="#{recursoAsignadoProyectoController.selected.porcentageTiempo}" title="#{bundle.EditRecursoAsignadoProyectoTitle_porcentageTiempo}" required="true" requiredMessage="#{bundle.EditRecursoAsignadoProyectoRequiredMessage_porcentageTiempo}"/>
+                    <h:outputLabel value="#{bundle.EditRecursoAsignadoProyectoLabel_comisionPorDia}" for="comisionPorDia" />
+                    <h:inputText id="comisionPorDia" value="#{recursoAsignadoProyectoController.selected.comisionPorDia}" title="#{bundle.EditRecursoAsignadoProyectoTitle_comisionPorDia}" required="true" requiredMessage="#{bundle.EditRecursoAsignadoProyectoRequiredMessage_comisionPorDia}"/>
+                    <h:outputLabel value="#{bundle.EditRecursoAsignadoProyectoLabel_PROYECTOidPROYECTO}" for="PROYECTOidPROYECTO" />
+                    <h:selectOneMenu id="PROYECTOidPROYECTO" value="#{recursoAsignadoProyectoController.selected.PROYECTOidPROYECTO}" title="#{bundle.EditRecursoAsignadoProyectoTitle_PROYECTOidPROYECTO}" required="true" requiredMessage="#{bundle.EditRecursoAsignadoProyectoRequiredMessage_PROYECTOidPROYECTO}">
+                        <f:selectItems value="#{proyectoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditRecursoAsignadoProyectoLabel_USUARIOSidUSUARIOS}" for="USUARIOSidUSUARIOS" />
+                    <h:selectOneMenu id="USUARIOSidUSUARIOS" value="#{recursoAsignadoProyectoController.selected.USUARIOSidUSUARIOS}" title="#{bundle.EditRecursoAsignadoProyectoTitle_USUARIOSidUSUARIOS}" required="true" requiredMessage="#{bundle.EditRecursoAsignadoProyectoRequiredMessage_USUARIOSidUSUARIOS}">
+                        <f:selectItems value="#{usuariosController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{recursoAsignadoProyectoController.update}" value="#{bundle.EditRecursoAsignadoProyectoSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditRecursoAsignadoProyectoViewLink}"/>
+                <br />
+                <h:commandLink action="#{recursoAsignadoProyectoController.prepareList}" value="#{bundle.EditRecursoAsignadoProyectoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditRecursoAsignadoProyectoIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

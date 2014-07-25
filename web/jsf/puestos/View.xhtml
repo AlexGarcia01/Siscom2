@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewPuestosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewPuestosLabel_idPUESTOS}"/>
+                    <h:outputText value="#{puestosController.selected.idPUESTOS}" title="#{bundle.ViewPuestosTitle_idPUESTOS}"/>
+                    <h:outputText value="#{bundle.ViewPuestosLabel_nombre}"/>
+                    <h:outputText value="#{puestosController.selected.nombre}" title="#{bundle.ViewPuestosTitle_nombre}"/>
+                    <h:outputText value="#{bundle.ViewPuestosLabel_nivel}"/>
+                    <h:outputText value="#{puestosController.selected.nivel}" title="#{bundle.ViewPuestosTitle_nivel}"/>
+                    <h:outputText value="#{bundle.ViewPuestosLabel_fechaInicio}"/>
+                    <h:outputText value="#{puestosController.selected.fechaInicio}" title="#{bundle.ViewPuestosTitle_fechaInicio}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewPuestosLabel_fechaFin}"/>
+                    <h:outputText value="#{puestosController.selected.fechaFin}" title="#{bundle.ViewPuestosTitle_fechaFin}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewPuestosLabel_AREAidAREA}"/>
+                    <h:outputText value="#{puestosController.selected.AREAidAREA}" title="#{bundle.ViewPuestosTitle_AREAidAREA}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{puestosController.destroyAndView}" value="#{bundle.ViewPuestosDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewPuestosEditLink}"/>
+                <br />
+                <h:commandLink action="#{puestosController.prepareCreate}" value="#{bundle.ViewPuestosCreateLink}" />
+                <br />
+                <h:commandLink action="#{puestosController.prepareList}" value="#{bundle.ViewPuestosShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewPuestosIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

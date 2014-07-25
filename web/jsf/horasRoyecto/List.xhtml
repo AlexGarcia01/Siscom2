@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListHorasRoyectoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListHorasRoyectoEmpty}" rendered="#{horasRoyectoController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{horasRoyectoController.items.rowCount > 0}">
+                    <h:outputText value="#{horasRoyectoController.pagination.pageFirstItem + 1}..#{horasRoyectoController.pagination.pageLastItem + 1}/#{horasRoyectoController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{horasRoyectoController.previous}" value="#{bundle.Previous} #{horasRoyectoController.pagination.pageSize}" rendered="#{horasRoyectoController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{horasRoyectoController.next}" value="#{bundle.Next} #{horasRoyectoController.pagination.pageSize}" rendered="#{horasRoyectoController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{horasRoyectoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHorasRoyectoTitle_idHORASROYECTO}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idHORASROYECTO}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHorasRoyectoTitle_horas}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.horas}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHorasRoyectoTitle_status}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.status}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHorasRoyectoTitle_PROYECTOidPROYECTO}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.PROYECTOidPROYECTO}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHorasRoyectoTitle_USUARIOSidUSUARIOS}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.USUARIOSidUSUARIOS}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHorasRoyectoTitle_PERIODOSidPERIODOS}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.PERIODOSidPERIODOS}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{horasRoyectoController.prepareView}" value="#{bundle.ListHorasRoyectoViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{horasRoyectoController.prepareEdit}" value="#{bundle.ListHorasRoyectoEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{horasRoyectoController.destroy}" value="#{bundle.ListHorasRoyectoDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{horasRoyectoController.prepareCreate}" value="#{bundle.ListHorasRoyectoCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListHorasRoyectoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

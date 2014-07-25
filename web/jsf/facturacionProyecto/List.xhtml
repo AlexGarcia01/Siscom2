@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListFacturacionProyectoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListFacturacionProyectoEmpty}" rendered="#{facturacionProyectoController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{facturacionProyectoController.items.rowCount > 0}">
+                    <h:outputText value="#{facturacionProyectoController.pagination.pageFirstItem + 1}..#{facturacionProyectoController.pagination.pageLastItem + 1}/#{facturacionProyectoController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{facturacionProyectoController.previous}" value="#{bundle.Previous} #{facturacionProyectoController.pagination.pageSize}" rendered="#{facturacionProyectoController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{facturacionProyectoController.next}" value="#{bundle.Next} #{facturacionProyectoController.pagination.pageSize}" rendered="#{facturacionProyectoController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{facturacionProyectoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFacturacionProyectoTitle_idFACTURACIONPROYECTO}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idFACTURACIONPROYECTO}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFacturacionProyectoTitle_folioFactura}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.folioFactura}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFacturacionProyectoTitle_mes}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.mes}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFacturacionProyectoTitle_horas}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.horas}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFacturacionProyectoTitle_horasFecha}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.horasFecha}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFacturacionProyectoTitle_monto}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.monto}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFacturacionProyectoTitle_iva}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.iva}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFacturacionProyectoTitle_total}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.total}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFacturacionProyectoTitle_PROYECTOidPROYECTO}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.PROYECTOidPROYECTO}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListFacturacionProyectoTitle_ENTREGABLESPROYECTOidENTREGABLESPROYECTO}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.ENTREGABLESPROYECTOidENTREGABLESPROYECTO}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{facturacionProyectoController.prepareView}" value="#{bundle.ListFacturacionProyectoViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{facturacionProyectoController.prepareEdit}" value="#{bundle.ListFacturacionProyectoEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{facturacionProyectoController.destroy}" value="#{bundle.ListFacturacionProyectoDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{facturacionProyectoController.prepareCreate}" value="#{bundle.ListFacturacionProyectoCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListFacturacionProyectoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

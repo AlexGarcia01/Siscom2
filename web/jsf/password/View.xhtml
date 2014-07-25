@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewPasswordTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewPasswordLabel_idPASSWORD}"/>
+                    <h:outputText value="#{passwordController.selected.idPASSWORD}" title="#{bundle.ViewPasswordTitle_idPASSWORD}"/>
+                    <h:outputText value="#{bundle.ViewPasswordLabel_password}"/>
+                    <h:outputText value="#{passwordController.selected.password}" title="#{bundle.ViewPasswordTitle_password}"/>
+                    <h:outputText value="#{bundle.ViewPasswordLabel_fecheInicio}"/>
+                    <h:outputText value="#{passwordController.selected.fecheInicio}" title="#{bundle.ViewPasswordTitle_fecheInicio}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewPasswordLabel_fechaFin}"/>
+                    <h:outputText value="#{passwordController.selected.fechaFin}" title="#{bundle.ViewPasswordTitle_fechaFin}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewPasswordLabel_fechaCaducidad}"/>
+                    <h:outputText value="#{passwordController.selected.fechaCaducidad}" title="#{bundle.ViewPasswordTitle_fechaCaducidad}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewPasswordLabel_tipoUsuario}"/>
+                    <h:outputText value="#{passwordController.selected.tipoUsuario}" title="#{bundle.ViewPasswordTitle_tipoUsuario}"/>
+                    <h:outputText value="#{bundle.ViewPasswordLabel_USUARIOSidUSUARIOS}"/>
+                    <h:outputText value="#{passwordController.selected.USUARIOSidUSUARIOS}" title="#{bundle.ViewPasswordTitle_USUARIOSidUSUARIOS}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{passwordController.destroyAndView}" value="#{bundle.ViewPasswordDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewPasswordEditLink}"/>
+                <br />
+                <h:commandLink action="#{passwordController.prepareCreate}" value="#{bundle.ViewPasswordCreateLink}" />
+                <br />
+                <h:commandLink action="#{passwordController.prepareList}" value="#{bundle.ViewPasswordShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewPasswordIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListRecursoAsignadoProyectoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListRecursoAsignadoProyectoEmpty}" rendered="#{recursoAsignadoProyectoController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{recursoAsignadoProyectoController.items.rowCount > 0}">
+                    <h:outputText value="#{recursoAsignadoProyectoController.pagination.pageFirstItem + 1}..#{recursoAsignadoProyectoController.pagination.pageLastItem + 1}/#{recursoAsignadoProyectoController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{recursoAsignadoProyectoController.previous}" value="#{bundle.Previous} #{recursoAsignadoProyectoController.pagination.pageSize}" rendered="#{recursoAsignadoProyectoController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{recursoAsignadoProyectoController.next}" value="#{bundle.Next} #{recursoAsignadoProyectoController.pagination.pageSize}" rendered="#{recursoAsignadoProyectoController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{recursoAsignadoProyectoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListRecursoAsignadoProyectoTitle_idRECURSOASIGNADOPROYECTO}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idRECURSOASIGNADOPROYECTO}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListRecursoAsignadoProyectoTitle_fechaInicio}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fechaInicio}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListRecursoAsignadoProyectoTitle_fechaFin}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.fechaFin}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListRecursoAsignadoProyectoTitle_superior}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.superior}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListRecursoAsignadoProyectoTitle_porcentageTiempo}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.porcentageTiempo}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListRecursoAsignadoProyectoTitle_comisionPorDia}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.comisionPorDia}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListRecursoAsignadoProyectoTitle_PROYECTOidPROYECTO}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.PROYECTOidPROYECTO}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListRecursoAsignadoProyectoTitle_USUARIOSidUSUARIOS}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.USUARIOSidUSUARIOS}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{recursoAsignadoProyectoController.prepareView}" value="#{bundle.ListRecursoAsignadoProyectoViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{recursoAsignadoProyectoController.prepareEdit}" value="#{bundle.ListRecursoAsignadoProyectoEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{recursoAsignadoProyectoController.destroy}" value="#{bundle.ListRecursoAsignadoProyectoDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{recursoAsignadoProyectoController.prepareCreate}" value="#{bundle.ListRecursoAsignadoProyectoCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListRecursoAsignadoProyectoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateEntregablesProyectoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateEntregablesProyectoLabel_idENTREGABLESPROYECTO}" for="idENTREGABLESPROYECTO" />
+                    <h:inputText id="idENTREGABLESPROYECTO" value="#{entregablesProyectoController.selected.idENTREGABLESPROYECTO}" title="#{bundle.CreateEntregablesProyectoTitle_idENTREGABLESPROYECTO}" required="true" requiredMessage="#{bundle.CreateEntregablesProyectoRequiredMessage_idENTREGABLESPROYECTO}"/>
+                    <h:outputLabel value="#{bundle.CreateEntregablesProyectoLabel_descripcion}" for="descripcion" />
+                    <h:inputText id="descripcion" value="#{entregablesProyectoController.selected.descripcion}" title="#{bundle.CreateEntregablesProyectoTitle_descripcion}" required="true" requiredMessage="#{bundle.CreateEntregablesProyectoRequiredMessage_descripcion}"/>
+                    <h:outputLabel value="#{bundle.CreateEntregablesProyectoLabel_fechaEnt}" for="fechaEnt" />
+                    <h:inputText id="fechaEnt" value="#{entregablesProyectoController.selected.fechaEnt}" title="#{bundle.CreateEntregablesProyectoTitle_fechaEnt}" required="true" requiredMessage="#{bundle.CreateEntregablesProyectoRequiredMessage_fechaEnt}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateEntregablesProyectoLabel_monto}" for="monto" />
+                    <h:inputText id="monto" value="#{entregablesProyectoController.selected.monto}" title="#{bundle.CreateEntregablesProyectoTitle_monto}" required="true" requiredMessage="#{bundle.CreateEntregablesProyectoRequiredMessage_monto}"/>
+                    <h:outputLabel value="#{bundle.CreateEntregablesProyectoLabel_iva}" for="iva" />
+                    <h:inputText id="iva" value="#{entregablesProyectoController.selected.iva}" title="#{bundle.CreateEntregablesProyectoTitle_iva}" required="true" requiredMessage="#{bundle.CreateEntregablesProyectoRequiredMessage_iva}"/>
+                    <h:outputLabel value="#{bundle.CreateEntregablesProyectoLabel_montoTotal}" for="montoTotal" />
+                    <h:inputText id="montoTotal" value="#{entregablesProyectoController.selected.montoTotal}" title="#{bundle.CreateEntregablesProyectoTitle_montoTotal}" required="true" requiredMessage="#{bundle.CreateEntregablesProyectoRequiredMessage_montoTotal}"/>
+                    <h:outputLabel value="#{bundle.CreateEntregablesProyectoLabel_PROYECTOidPROYECTO}" for="PROYECTOidPROYECTO" />
+                    <h:selectOneMenu id="PROYECTOidPROYECTO" value="#{entregablesProyectoController.selected.PROYECTOidPROYECTO}" title="#{bundle.CreateEntregablesProyectoTitle_PROYECTOidPROYECTO}" required="true" requiredMessage="#{bundle.CreateEntregablesProyectoRequiredMessage_PROYECTOidPROYECTO}">
+                        <f:selectItems value="#{proyectoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateEntregablesProyectoLabel_PRODUCTOSidPRODUCTOS}" for="PRODUCTOSidPRODUCTOS" />
+                    <h:selectOneMenu id="PRODUCTOSidPRODUCTOS" value="#{entregablesProyectoController.selected.PRODUCTOSidPRODUCTOS}" title="#{bundle.CreateEntregablesProyectoTitle_PRODUCTOSidPRODUCTOS}" required="true" requiredMessage="#{bundle.CreateEntregablesProyectoRequiredMessage_PRODUCTOSidPRODUCTOS}">
+                        <f:selectItems value="#{productosController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{entregablesProyectoController.create}" value="#{bundle.CreateEntregablesProyectoSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{entregablesProyectoController.prepareList}" value="#{bundle.CreateEntregablesProyectoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateEntregablesProyectoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

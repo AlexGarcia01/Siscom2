@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreatePeriodosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreatePeriodosLabel_idPERIODOS}" for="idPERIODOS" />
+                    <h:inputText id="idPERIODOS" value="#{periodosController.selected.idPERIODOS}" title="#{bundle.CreatePeriodosTitle_idPERIODOS}" required="true" requiredMessage="#{bundle.CreatePeriodosRequiredMessage_idPERIODOS}"/>
+                    <h:outputLabel value="#{bundle.CreatePeriodosLabel_fechaInicio}" for="fechaInicio" />
+                    <h:inputText id="fechaInicio" value="#{periodosController.selected.fechaInicio}" title="#{bundle.CreatePeriodosTitle_fechaInicio}" required="true" requiredMessage="#{bundle.CreatePeriodosRequiredMessage_fechaInicio}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreatePeriodosLabel_fechaFin}" for="fechaFin" />
+                    <h:inputText id="fechaFin" value="#{periodosController.selected.fechaFin}" title="#{bundle.CreatePeriodosTitle_fechaFin}" required="true" requiredMessage="#{bundle.CreatePeriodosRequiredMessage_fechaFin}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreatePeriodosLabel_semana}" for="semana" />
+                    <h:inputText id="semana" value="#{periodosController.selected.semana}" title="#{bundle.CreatePeriodosTitle_semana}" required="true" requiredMessage="#{bundle.CreatePeriodosRequiredMessage_semana}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{periodosController.create}" value="#{bundle.CreatePeriodosSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{periodosController.prepareList}" value="#{bundle.CreatePeriodosShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreatePeriodosIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateRecursosProyectoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateRecursosProyectoLabel_idRECURSOSPROYECTO}" for="idRECURSOSPROYECTO" />
+                    <h:inputText id="idRECURSOSPROYECTO" value="#{recursosProyectoController.selected.idRECURSOSPROYECTO}" title="#{bundle.CreateRecursosProyectoTitle_idRECURSOSPROYECTO}" required="true" requiredMessage="#{bundle.CreateRecursosProyectoRequiredMessage_idRECURSOSPROYECTO}"/>
+                    <h:outputLabel value="#{bundle.CreateRecursosProyectoLabel_tipoRecurso}" for="tipoRecurso" />
+                    <h:inputText id="tipoRecurso" value="#{recursosProyectoController.selected.tipoRecurso}" title="#{bundle.CreateRecursosProyectoTitle_tipoRecurso}" required="true" requiredMessage="#{bundle.CreateRecursosProyectoRequiredMessage_tipoRecurso}"/>
+                    <h:outputLabel value="#{bundle.CreateRecursosProyectoLabel_numeroRecursos}" for="numeroRecursos" />
+                    <h:inputText id="numeroRecursos" value="#{recursosProyectoController.selected.numeroRecursos}" title="#{bundle.CreateRecursosProyectoTitle_numeroRecursos}" required="true" requiredMessage="#{bundle.CreateRecursosProyectoRequiredMessage_numeroRecursos}"/>
+                    <h:outputLabel value="#{bundle.CreateRecursosProyectoLabel_PUESTOSidPUESTOS}" for="PUESTOSidPUESTOS" />
+                    <h:selectOneMenu id="PUESTOSidPUESTOS" value="#{recursosProyectoController.selected.PUESTOSidPUESTOS}" title="#{bundle.CreateRecursosProyectoTitle_PUESTOSidPUESTOS}" required="true" requiredMessage="#{bundle.CreateRecursosProyectoRequiredMessage_PUESTOSidPUESTOS}">
+                        <f:selectItems value="#{puestosController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateRecursosProyectoLabel_PROYECTOidPROYECTO}" for="PROYECTOidPROYECTO" />
+                    <h:selectOneMenu id="PROYECTOidPROYECTO" value="#{recursosProyectoController.selected.PROYECTOidPROYECTO}" title="#{bundle.CreateRecursosProyectoTitle_PROYECTOidPROYECTO}" required="true" requiredMessage="#{bundle.CreateRecursosProyectoRequiredMessage_PROYECTOidPROYECTO}">
+                        <f:selectItems value="#{proyectoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{recursosProyectoController.create}" value="#{bundle.CreateRecursosProyectoSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{recursosProyectoController.prepareList}" value="#{bundle.CreateRecursosProyectoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateRecursosProyectoIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

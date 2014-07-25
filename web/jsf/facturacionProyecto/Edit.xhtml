@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditFacturacionProyectoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditFacturacionProyectoLabel_idFACTURACIONPROYECTO}" for="idFACTURACIONPROYECTO" />
+                    <h:inputText id="idFACTURACIONPROYECTO" value="#{facturacionProyectoController.selected.idFACTURACIONPROYECTO}" title="#{bundle.EditFacturacionProyectoTitle_idFACTURACIONPROYECTO}" required="true" requiredMessage="#{bundle.EditFacturacionProyectoRequiredMessage_idFACTURACIONPROYECTO}"/>
+                    <h:outputLabel value="#{bundle.EditFacturacionProyectoLabel_folioFactura}" for="folioFactura" />
+                    <h:inputText id="folioFactura" value="#{facturacionProyectoController.selected.folioFactura}" title="#{bundle.EditFacturacionProyectoTitle_folioFactura}" required="true" requiredMessage="#{bundle.EditFacturacionProyectoRequiredMessage_folioFactura}"/>
+                    <h:outputLabel value="#{bundle.EditFacturacionProyectoLabel_mes}" for="mes" />
+                    <h:inputText id="mes" value="#{facturacionProyectoController.selected.mes}" title="#{bundle.EditFacturacionProyectoTitle_mes}" required="true" requiredMessage="#{bundle.EditFacturacionProyectoRequiredMessage_mes}"/>
+                    <h:outputLabel value="#{bundle.EditFacturacionProyectoLabel_horas}" for="horas" />
+                    <h:inputText id="horas" value="#{facturacionProyectoController.selected.horas}" title="#{bundle.EditFacturacionProyectoTitle_horas}" required="true" requiredMessage="#{bundle.EditFacturacionProyectoRequiredMessage_horas}"/>
+                    <h:outputLabel value="#{bundle.EditFacturacionProyectoLabel_horasFecha}" for="horasFecha" />
+                    <h:inputText id="horasFecha" value="#{facturacionProyectoController.selected.horasFecha}" title="#{bundle.EditFacturacionProyectoTitle_horasFecha}" required="true" requiredMessage="#{bundle.EditFacturacionProyectoRequiredMessage_horasFecha}"/>
+                    <h:outputLabel value="#{bundle.EditFacturacionProyectoLabel_monto}" for="monto" />
+                    <h:inputText id="monto" value="#{facturacionProyectoController.selected.monto}" title="#{bundle.EditFacturacionProyectoTitle_monto}" required="true" requiredMessage="#{bundle.EditFacturacionProyectoRequiredMessage_monto}"/>
+                    <h:outputLabel value="#{bundle.EditFacturacionProyectoLabel_iva}" for="iva" />
+                    <h:inputText id="iva" value="#{facturacionProyectoController.selected.iva}" title="#{bundle.EditFacturacionProyectoTitle_iva}" required="true" requiredMessage="#{bundle.EditFacturacionProyectoRequiredMessage_iva}"/>
+                    <h:outputLabel value="#{bundle.EditFacturacionProyectoLabel_total}" for="total" />
+                    <h:inputText id="total" value="#{facturacionProyectoController.selected.total}" title="#{bundle.EditFacturacionProyectoTitle_total}" required="true" requiredMessage="#{bundle.EditFacturacionProyectoRequiredMessage_total}"/>
+                    <h:outputLabel value="#{bundle.EditFacturacionProyectoLabel_PROYECTOidPROYECTO}" for="PROYECTOidPROYECTO" />
+                    <h:selectOneMenu id="PROYECTOidPROYECTO" value="#{facturacionProyectoController.selected.PROYECTOidPROYECTO}" title="#{bundle.EditFacturacionProyectoTitle_PROYECTOidPROYECTO}" required="true" requiredMessage="#{bundle.EditFacturacionProyectoRequiredMessage_PROYECTOidPROYECTO}">
+                        <f:selectItems value="#{proyectoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditFacturacionProyectoLabel_ENTREGABLESPROYECTOidENTREGABLESPROYECTO}" for="ENTREGABLESPROYECTOidENTREGABLESPROYECTO" />
+                    <h:selectOneMenu id="ENTREGABLESPROYECTOidENTREGABLESPROYECTO" value="#{facturacionProyectoController.selected.ENTREGABLESPROYECTOidENTREGABLESPROYECTO}" title="#{bundle.EditFacturacionProyectoTitle_ENTREGABLESPROYECTOidENTREGABLESPROYECTO}" required="true" requiredMessage="#{bundle.EditFacturacionProyectoRequiredMessage_ENTREGABLESPROYECTOidENTREGABLESPROYECTO}">
+                        <f:selectItems value="#{entregablesProyectoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{facturacionProyectoController.update}" value="#{bundle.EditFacturacionProyectoSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditFacturacionProyectoViewLink}"/>
+                <br />
+                <h:commandLink action="#{facturacionProyectoController.prepareList}" value="#{bundle.EditFacturacionProyectoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditFacturacionProyectoIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

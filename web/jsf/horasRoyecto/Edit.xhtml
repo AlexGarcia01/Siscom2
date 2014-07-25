@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditHorasRoyectoTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditHorasRoyectoLabel_idHORASROYECTO}" for="idHORASROYECTO" />
+                    <h:inputText id="idHORASROYECTO" value="#{horasRoyectoController.selected.idHORASROYECTO}" title="#{bundle.EditHorasRoyectoTitle_idHORASROYECTO}" required="true" requiredMessage="#{bundle.EditHorasRoyectoRequiredMessage_idHORASROYECTO}"/>
+                    <h:outputLabel value="#{bundle.EditHorasRoyectoLabel_horas}" for="horas" />
+                    <h:inputText id="horas" value="#{horasRoyectoController.selected.horas}" title="#{bundle.EditHorasRoyectoTitle_horas}" required="true" requiredMessage="#{bundle.EditHorasRoyectoRequiredMessage_horas}"/>
+                    <h:outputLabel value="#{bundle.EditHorasRoyectoLabel_status}" for="status" />
+                    <h:inputText id="status" value="#{horasRoyectoController.selected.status}" title="#{bundle.EditHorasRoyectoTitle_status}" />
+                    <h:outputLabel value="#{bundle.EditHorasRoyectoLabel_PROYECTOidPROYECTO}" for="PROYECTOidPROYECTO" />
+                    <h:selectOneMenu id="PROYECTOidPROYECTO" value="#{horasRoyectoController.selected.PROYECTOidPROYECTO}" title="#{bundle.EditHorasRoyectoTitle_PROYECTOidPROYECTO}" required="true" requiredMessage="#{bundle.EditHorasRoyectoRequiredMessage_PROYECTOidPROYECTO}">
+                        <f:selectItems value="#{proyectoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditHorasRoyectoLabel_USUARIOSidUSUARIOS}" for="USUARIOSidUSUARIOS" />
+                    <h:selectOneMenu id="USUARIOSidUSUARIOS" value="#{horasRoyectoController.selected.USUARIOSidUSUARIOS}" title="#{bundle.EditHorasRoyectoTitle_USUARIOSidUSUARIOS}" required="true" requiredMessage="#{bundle.EditHorasRoyectoRequiredMessage_USUARIOSidUSUARIOS}">
+                        <f:selectItems value="#{usuariosController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.EditHorasRoyectoLabel_PERIODOSidPERIODOS}" for="PERIODOSidPERIODOS" />
+                    <h:selectOneMenu id="PERIODOSidPERIODOS" value="#{horasRoyectoController.selected.PERIODOSidPERIODOS}" title="#{bundle.EditHorasRoyectoTitle_PERIODOSidPERIODOS}" required="true" requiredMessage="#{bundle.EditHorasRoyectoRequiredMessage_PERIODOSidPERIODOS}">
+                        <f:selectItems value="#{periodosController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{horasRoyectoController.update}" value="#{bundle.EditHorasRoyectoSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditHorasRoyectoViewLink}"/>
+                <br />
+                <h:commandLink action="#{horasRoyectoController.prepareList}" value="#{bundle.EditHorasRoyectoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditHorasRoyectoIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

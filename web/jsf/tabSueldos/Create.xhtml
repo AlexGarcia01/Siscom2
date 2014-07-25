@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateTabSueldosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateTabSueldosLabel_idTABSUELDOS}" for="idTABSUELDOS" />
+                    <h:inputText id="idTABSUELDOS" value="#{tabSueldosController.selected.idTABSUELDOS}" title="#{bundle.CreateTabSueldosTitle_idTABSUELDOS}" required="true" requiredMessage="#{bundle.CreateTabSueldosRequiredMessage_idTABSUELDOS}"/>
+                    <h:outputLabel value="#{bundle.CreateTabSueldosLabel_sueldoBAse}" for="sueldoBAse" />
+                    <h:inputText id="sueldoBAse" value="#{tabSueldosController.selected.sueldoBAse}" title="#{bundle.CreateTabSueldosTitle_sueldoBAse}" required="true" requiredMessage="#{bundle.CreateTabSueldosRequiredMessage_sueldoBAse}"/>
+                    <h:outputLabel value="#{bundle.CreateTabSueldosLabel_sueldoVariable}" for="sueldoVariable" />
+                    <h:inputText id="sueldoVariable" value="#{tabSueldosController.selected.sueldoVariable}" title="#{bundle.CreateTabSueldosTitle_sueldoVariable}" required="true" requiredMessage="#{bundle.CreateTabSueldosRequiredMessage_sueldoVariable}"/>
+                    <h:outputLabel value="#{bundle.CreateTabSueldosLabel_PUESTOSidPUESTOS}" for="PUESTOSidPUESTOS" />
+                    <h:selectOneMenu id="PUESTOSidPUESTOS" value="#{tabSueldosController.selected.PUESTOSidPUESTOS}" title="#{bundle.CreateTabSueldosTitle_PUESTOSidPUESTOS}" required="true" requiredMessage="#{bundle.CreateTabSueldosRequiredMessage_PUESTOSidPUESTOS}">
+                        <f:selectItems value="#{puestosController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{tabSueldosController.create}" value="#{bundle.CreateTabSueldosSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{tabSueldosController.prepareList}" value="#{bundle.CreateTabSueldosShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateTabSueldosIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

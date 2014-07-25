@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewGastoProyectosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewGastoProyectosLabel_idGASTOPROYECTOS}"/>
+                    <h:outputText value="#{gastoProyectosController.selected.idGASTOPROYECTOS}" title="#{bundle.ViewGastoProyectosTitle_idGASTOPROYECTOS}"/>
+                    <h:outputText value="#{bundle.ViewGastoProyectosLabel_monto}"/>
+                    <h:outputText value="#{gastoProyectosController.selected.monto}" title="#{bundle.ViewGastoProyectosTitle_monto}"/>
+                    <h:outputText value="#{bundle.ViewGastoProyectosLabel_iva}"/>
+                    <h:outputText value="#{gastoProyectosController.selected.iva}" title="#{bundle.ViewGastoProyectosTitle_iva}"/>
+                    <h:outputText value="#{bundle.ViewGastoProyectosLabel_totalMonto}"/>
+                    <h:outputText value="#{gastoProyectosController.selected.totalMonto}" title="#{bundle.ViewGastoProyectosTitle_totalMonto}"/>
+                    <h:outputText value="#{bundle.ViewGastoProyectosLabel_PROYECTOidPROYECTO}"/>
+                    <h:outputText value="#{gastoProyectosController.selected.PROYECTOidPROYECTO}" title="#{bundle.ViewGastoProyectosTitle_PROYECTOidPROYECTO}"/>
+                    <h:outputText value="#{bundle.ViewGastoProyectosLabel_TIPOGASTOSidTIPOGASTOS}"/>
+                    <h:outputText value="#{gastoProyectosController.selected.TIPOGASTOSidTIPOGASTOS}" title="#{bundle.ViewGastoProyectosTitle_TIPOGASTOSidTIPOGASTOS}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{gastoProyectosController.destroyAndView}" value="#{bundle.ViewGastoProyectosDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewGastoProyectosEditLink}"/>
+                <br />
+                <h:commandLink action="#{gastoProyectosController.prepareCreate}" value="#{bundle.ViewGastoProyectosCreateLink}" />
+                <br />
+                <h:commandLink action="#{gastoProyectosController.prepareList}" value="#{bundle.ViewGastoProyectosShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewGastoProyectosIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

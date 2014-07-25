@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateGastoProyectosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateGastoProyectosLabel_idGASTOPROYECTOS}" for="idGASTOPROYECTOS" />
+                    <h:inputText id="idGASTOPROYECTOS" value="#{gastoProyectosController.selected.idGASTOPROYECTOS}" title="#{bundle.CreateGastoProyectosTitle_idGASTOPROYECTOS}" required="true" requiredMessage="#{bundle.CreateGastoProyectosRequiredMessage_idGASTOPROYECTOS}"/>
+                    <h:outputLabel value="#{bundle.CreateGastoProyectosLabel_monto}" for="monto" />
+                    <h:inputText id="monto" value="#{gastoProyectosController.selected.monto}" title="#{bundle.CreateGastoProyectosTitle_monto}" required="true" requiredMessage="#{bundle.CreateGastoProyectosRequiredMessage_monto}"/>
+                    <h:outputLabel value="#{bundle.CreateGastoProyectosLabel_iva}" for="iva" />
+                    <h:inputText id="iva" value="#{gastoProyectosController.selected.iva}" title="#{bundle.CreateGastoProyectosTitle_iva}" required="true" requiredMessage="#{bundle.CreateGastoProyectosRequiredMessage_iva}"/>
+                    <h:outputLabel value="#{bundle.CreateGastoProyectosLabel_totalMonto}" for="totalMonto" />
+                    <h:inputText id="totalMonto" value="#{gastoProyectosController.selected.totalMonto}" title="#{bundle.CreateGastoProyectosTitle_totalMonto}" required="true" requiredMessage="#{bundle.CreateGastoProyectosRequiredMessage_totalMonto}"/>
+                    <h:outputLabel value="#{bundle.CreateGastoProyectosLabel_PROYECTOidPROYECTO}" for="PROYECTOidPROYECTO" />
+                    <h:selectOneMenu id="PROYECTOidPROYECTO" value="#{gastoProyectosController.selected.PROYECTOidPROYECTO}" title="#{bundle.CreateGastoProyectosTitle_PROYECTOidPROYECTO}" required="true" requiredMessage="#{bundle.CreateGastoProyectosRequiredMessage_PROYECTOidPROYECTO}">
+                        <f:selectItems value="#{proyectoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateGastoProyectosLabel_TIPOGASTOSidTIPOGASTOS}" for="TIPOGASTOSidTIPOGASTOS" />
+                    <h:selectOneMenu id="TIPOGASTOSidTIPOGASTOS" value="#{gastoProyectosController.selected.TIPOGASTOSidTIPOGASTOS}" title="#{bundle.CreateGastoProyectosTitle_TIPOGASTOSidTIPOGASTOS}" required="true" requiredMessage="#{bundle.CreateGastoProyectosRequiredMessage_TIPOGASTOSidTIPOGASTOS}">
+                        <f:selectItems value="#{tipoGastosController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{gastoProyectosController.create}" value="#{bundle.CreateGastoProyectosSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{gastoProyectosController.prepareList}" value="#{bundle.CreateGastoProyectosShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateGastoProyectosIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

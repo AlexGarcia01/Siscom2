@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateUsuariosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateUsuariosLabel_idUSUARIOS}" for="idUSUARIOS" />
+                    <h:inputText id="idUSUARIOS" value="#{usuariosController.selected.idUSUARIOS}" title="#{bundle.CreateUsuariosTitle_idUSUARIOS}" required="true" requiredMessage="#{bundle.CreateUsuariosRequiredMessage_idUSUARIOS}"/>
+                    <h:outputLabel value="#{bundle.CreateUsuariosLabel_nombre}" for="nombre" />
+                    <h:inputText id="nombre" value="#{usuariosController.selected.nombre}" title="#{bundle.CreateUsuariosTitle_nombre}" required="true" requiredMessage="#{bundle.CreateUsuariosRequiredMessage_nombre}"/>
+                    <h:outputLabel value="#{bundle.CreateUsuariosLabel_apellidoPaterno}" for="apellidoPaterno" />
+                    <h:inputText id="apellidoPaterno" value="#{usuariosController.selected.apellidoPaterno}" title="#{bundle.CreateUsuariosTitle_apellidoPaterno}" required="true" requiredMessage="#{bundle.CreateUsuariosRequiredMessage_apellidoPaterno}"/>
+                    <h:outputLabel value="#{bundle.CreateUsuariosLabel_apellidoMaterno}" for="apellidoMaterno" />
+                    <h:inputText id="apellidoMaterno" value="#{usuariosController.selected.apellidoMaterno}" title="#{bundle.CreateUsuariosTitle_apellidoMaterno}" required="true" requiredMessage="#{bundle.CreateUsuariosRequiredMessage_apellidoMaterno}"/>
+                    <h:outputLabel value="#{bundle.CreateUsuariosLabel_tipoContrato}" for="tipoContrato" />
+                    <h:inputText id="tipoContrato" value="#{usuariosController.selected.tipoContrato}" title="#{bundle.CreateUsuariosTitle_tipoContrato}" />
+                    <h:outputLabel value="#{bundle.CreateUsuariosLabel_calle}" for="calle" />
+                    <h:inputText id="calle" value="#{usuariosController.selected.calle}" title="#{bundle.CreateUsuariosTitle_calle}" required="true" requiredMessage="#{bundle.CreateUsuariosRequiredMessage_calle}"/>
+                    <h:outputLabel value="#{bundle.CreateUsuariosLabel_numero}" for="numero" />
+                    <h:inputText id="numero" value="#{usuariosController.selected.numero}" title="#{bundle.CreateUsuariosTitle_numero}" required="true" requiredMessage="#{bundle.CreateUsuariosRequiredMessage_numero}"/>
+                    <h:outputLabel value="#{bundle.CreateUsuariosLabel_cp}" for="cp" />
+                    <h:inputText id="cp" value="#{usuariosController.selected.cp}" title="#{bundle.CreateUsuariosTitle_cp}" required="true" requiredMessage="#{bundle.CreateUsuariosRequiredMessage_cp}"/>
+                    <h:outputLabel value="#{bundle.CreateUsuariosLabel_colonia}" for="colonia" />
+                    <h:inputText id="colonia" value="#{usuariosController.selected.colonia}" title="#{bundle.CreateUsuariosTitle_colonia}" />
+                    <h:outputLabel value="#{bundle.CreateUsuariosLabel_delegacion}" for="delegacion" />
+                    <h:inputText id="delegacion" value="#{usuariosController.selected.delegacion}" title="#{bundle.CreateUsuariosTitle_delegacion}" />
+                    <h:outputLabel value="#{bundle.CreateUsuariosLabel_correoElectronico}" for="correoElectronico" />
+                    <h:inputText id="correoElectronico" value="#{usuariosController.selected.correoElectronico}" title="#{bundle.CreateUsuariosTitle_correoElectronico}" required="true" requiredMessage="#{bundle.CreateUsuariosRequiredMessage_correoElectronico}"/>
+                    <h:outputLabel value="#{bundle.CreateUsuariosLabel_telefono}" for="telefono" />
+                    <h:inputText id="telefono" value="#{usuariosController.selected.telefono}" title="#{bundle.CreateUsuariosTitle_telefono}" required="true" requiredMessage="#{bundle.CreateUsuariosRequiredMessage_telefono}"/>
+                    <h:outputLabel value="#{bundle.CreateUsuariosLabel_PUESTOSidPUESTOS}" for="PUESTOSidPUESTOS" />
+                    <h:selectOneMenu id="PUESTOSidPUESTOS" value="#{usuariosController.selected.PUESTOSidPUESTOS}" title="#{bundle.CreateUsuariosTitle_PUESTOSidPUESTOS}" required="true" requiredMessage="#{bundle.CreateUsuariosRequiredMessage_PUESTOSidPUESTOS}">
+                        <f:selectItems value="#{puestosController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                    <h:outputLabel value="#{bundle.CreateUsuariosLabel_AREAidAREA}" for="AREAidAREA" />
+                    <h:selectOneMenu id="AREAidAREA" value="#{usuariosController.selected.AREAidAREA}" title="#{bundle.CreateUsuariosTitle_AREAidAREA}" required="true" requiredMessage="#{bundle.CreateUsuariosRequiredMessage_AREAidAREA}">
+                        <f:selectItems value="#{areaController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{usuariosController.create}" value="#{bundle.CreateUsuariosSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{usuariosController.prepareList}" value="#{bundle.CreateUsuariosShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateUsuariosIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

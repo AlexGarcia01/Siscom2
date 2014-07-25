@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewTabSueldosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewTabSueldosLabel_idTABSUELDOS}"/>
+                    <h:outputText value="#{tabSueldosController.selected.idTABSUELDOS}" title="#{bundle.ViewTabSueldosTitle_idTABSUELDOS}"/>
+                    <h:outputText value="#{bundle.ViewTabSueldosLabel_sueldoBAse}"/>
+                    <h:outputText value="#{tabSueldosController.selected.sueldoBAse}" title="#{bundle.ViewTabSueldosTitle_sueldoBAse}"/>
+                    <h:outputText value="#{bundle.ViewTabSueldosLabel_sueldoVariable}"/>
+                    <h:outputText value="#{tabSueldosController.selected.sueldoVariable}" title="#{bundle.ViewTabSueldosTitle_sueldoVariable}"/>
+                    <h:outputText value="#{bundle.ViewTabSueldosLabel_PUESTOSidPUESTOS}"/>
+                    <h:outputText value="#{tabSueldosController.selected.PUESTOSidPUESTOS}" title="#{bundle.ViewTabSueldosTitle_PUESTOSidPUESTOS}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{tabSueldosController.destroyAndView}" value="#{bundle.ViewTabSueldosDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewTabSueldosEditLink}"/>
+                <br />
+                <h:commandLink action="#{tabSueldosController.prepareCreate}" value="#{bundle.ViewTabSueldosCreateLink}" />
+                <br />
+                <h:commandLink action="#{tabSueldosController.prepareList}" value="#{bundle.ViewTabSueldosShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewTabSueldosIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
