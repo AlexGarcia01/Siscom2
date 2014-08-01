@@ -19,11 +19,11 @@
                     <h:inputText id="idRECURSOASIGNADOPROYECTO" value="#{recursoAsignadoProyectoController.selected.idRECURSOASIGNADOPROYECTO}" title="#{bundle.EditRecursoAsignadoProyectoTitle_idRECURSOASIGNADOPROYECTO}" required="true" requiredMessage="#{bundle.EditRecursoAsignadoProyectoRequiredMessage_idRECURSOASIGNADOPROYECTO}"/>
                     <h:outputLabel value="#{bundle.EditRecursoAsignadoProyectoLabel_fechaInicio}" for="fechaInicio" />
                     <h:inputText id="fechaInicio" value="#{recursoAsignadoProyectoController.selected.fechaInicio}" title="#{bundle.EditRecursoAsignadoProyectoTitle_fechaInicio}" required="true" requiredMessage="#{bundle.EditRecursoAsignadoProyectoRequiredMessage_fechaInicio}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
                     </h:inputText>
                     <h:outputLabel value="#{bundle.EditRecursoAsignadoProyectoLabel_fechaFin}" for="fechaFin" />
                     <h:inputText id="fechaFin" value="#{recursoAsignadoProyectoController.selected.fechaFin}" title="#{bundle.EditRecursoAsignadoProyectoTitle_fechaFin}" required="true" requiredMessage="#{bundle.EditRecursoAsignadoProyectoRequiredMessage_fechaFin}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
                     </h:inputText>
                     <h:outputLabel value="#{bundle.EditRecursoAsignadoProyectoLabel_superior}" for="superior" />
                     <h:inputText id="superior" value="#{recursoAsignadoProyectoController.selected.superior}" title="#{bundle.EditRecursoAsignadoProyectoTitle_superior}" />
@@ -48,7 +48,7 @@
                 <h:commandLink action="#{recursoAsignadoProyectoController.prepareList}" value="#{bundle.EditRecursoAsignadoProyectoShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.EditRecursoAsignadoProyectoIndexLink}" />
+                <h:link outcome="MenuAdmin" value="#{bundle.EditRecursoAsignadoProyectoIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

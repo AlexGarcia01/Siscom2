@@ -15,26 +15,25 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateProyectoLabel_idPROYECTO}" for="idPROYECTO" />
-                    <h:inputText id="idPROYECTO" value="#{proyectoController.selected.idPROYECTO}" title="#{bundle.CreateProyectoTitle_idPROYECTO}" required="true" requiredMessage="#{bundle.CreateProyectoRequiredMessage_idPROYECTO}"/>
+               
                     <h:outputLabel value="#{bundle.CreateProyectoLabel_nombre}" for="nombre" />
                     <h:inputText id="nombre" value="#{proyectoController.selected.nombre}" title="#{bundle.CreateProyectoTitle_nombre}" required="true" requiredMessage="#{bundle.CreateProyectoRequiredMessage_nombre}"/>
                     <h:outputLabel value="#{bundle.CreateProyectoLabel_compañia}" for="compañia" />
                     <h:inputText id="compañia" value="#{proyectoController.selected.compañia}" title="#{bundle.CreateProyectoTitle_compañia}" required="true" requiredMessage="#{bundle.CreateProyectoRequiredMessage_compañia}"/>
                     <h:outputLabel value="#{bundle.CreateProyectoLabel_fechaInicio}" for="fechaInicio" />
                     <h:inputText id="fechaInicio" value="#{proyectoController.selected.fechaInicio}" title="#{bundle.CreateProyectoTitle_fechaInicio}" required="true" requiredMessage="#{bundle.CreateProyectoRequiredMessage_fechaInicio}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
                     </h:inputText>
                     <h:outputLabel value="#{bundle.CreateProyectoLabel_fechaFin}" for="fechaFin" />
                     <h:inputText id="fechaFin" value="#{proyectoController.selected.fechaFin}" title="#{bundle.CreateProyectoTitle_fechaFin}" required="true" requiredMessage="#{bundle.CreateProyectoRequiredMessage_fechaFin}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
                     </h:inputText>
                     <h:outputLabel value="#{bundle.CreateProyectoLabel_AREAidAREA}" for="AREAidAREA" />
                     <h:selectOneMenu id="AREAidAREA" value="#{proyectoController.selected.AREAidAREA}" title="#{bundle.CreateProyectoTitle_AREAidAREA}" required="true" requiredMessage="#{bundle.CreateProyectoRequiredMessage_AREAidAREA}">
                         <f:selectItems value="#{areaController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.CreateProyectoLabel_TIPOPROYECTOidTIPOPROYECTO}" for="TIPOPROYECTOidTIPOPROYECTO" />
-                    <h:selectOneMenu id="TIPOPROYECTOidTIPOPROYECTO" value="#{proyectoController.selected.TIPOPROYECTOidTIPOPROYECTO}" title="#{bundle.CreateProyectoTitle_TIPOPROYECTOidTIPOPROYECTO}" required="true" requiredMessage="#{bundle.CreateProyectoRequiredMessage_TIPOPROYECTOidTIPOPROYECTO}">
+                    <h:outputLabel value="#{bundle.CreateProyectoLabel_TIPOPROYECTOidTIPOPROYECTO} " for="TIPOPROYECTOidTIPOPROYECTO" />
+                    <h:selectOneMenu id="TIPOPROYECTOidTIPOPROYECTO" value="#{proyectoController.selected.TIPOPROYECTOidTIPOPROYECTO} " title="#{bundle.CreateProyectoTitle_TIPOPROYECTOidTIPOPROYECTO} " required="true" requiredMessage="#{bundle.CreateProyectoRequiredMessage_TIPOPROYECTOidTIPOPROYECTO} ">
                         <f:selectItems value="#{tipoProyectoController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
                 </h:panelGrid>
@@ -45,7 +44,7 @@
                 <h:commandLink action="#{proyectoController.prepareList}" value="#{bundle.CreateProyectoShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateProyectoIndexLink}"/>
+                <h:link outcome="MenuAdmin" value="#{bundle.CreateProyectoIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

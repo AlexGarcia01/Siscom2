@@ -1,28 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <h:head>
-        <title>SisComAvansaas</title>
-        <h:outputStylesheet name="css/jsfcrud.css"/>
-    </h:head>
-    <h:body onload="#{mbSessiones.compruebaSession()}">
-        <h:messages/>
-        <h:outputLabel value="Ingreso el Usuario:"/>
-        <h:outputText value="#{mbSessiones.usuario}" />
-        <h:form>
-            <h:commandButton value="Log out" action="#{mbSessiones.cerrarSession()}"/> 
-            
-        </h:form>
-        
-        Este cambio es de Diego
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<ui:composition template="/template.xhtml">
+        <ui:define name="title">
+           
+        </ui:define>
+        <ui:define name="body">
+                      lista de catalogos
         <br />
         <h:link outcome="/jsf/area/List" value="Show All Area Items"/>
-        <br />
-        <h:link outcome="/jsf/entregablesProyecto/List" value="Show All EntregablesProyecto Items"/>
-        <br />
-        <h:link outcome="/jsf/facturacionProyecto/List" value="Show All FacturacionProyecto Items"/>
         <br />
         <h:link outcome="/jsf/gastoProyectos/List" value="Show All GastoProyectos Items"/>
         <br />
@@ -34,13 +22,7 @@
         <br />
         <h:link outcome="/jsf/productos/List" value="Show All Productos Items"/>
         <br />
-        <h:link outcome="/jsf/proyecto/List" value="Show All Proyecto Items"/>
-        <br />
         <h:link outcome="/jsf/puestos/List" value="Show All Puestos Items"/>
-        <br />
-        <h:link outcome="/jsf/recursoAsignadoProyecto/List" value="Show All RecursoAsignadoProyecto Items"/>
-        <br />
-        <h:link outcome="/jsf/recursosProyecto/List" value="Show All RecursosProyecto Items"/>
         <br />
         <h:link outcome="/jsf/sueldos/List" value="Show All Sueldos Items"/>
         <br />
@@ -49,9 +31,9 @@
         <h:link outcome="/jsf/tipoGastos/List" value="Show All TipoGastos Items"/>
         <br />
         <h:link outcome="/jsf/tipoProyecto/List" value="Show All TipoProyecto Items"/>
-        <br />
-        <h:link outcome="/jsf/usuarios/List" value="Show All Usuarios Items"/>
+
   
-        
-    </h:body>
+         
+        </ui:define>
+    </ui:composition>
 </html>

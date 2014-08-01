@@ -72,7 +72,7 @@
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListFacturacionProyectoTitle_PROYECTOidPROYECTO}"/>
                             </f:facet>
-                            <h:outputText value="#{item.PROYECTOidPROYECTO}"/>
+                            <h:outputText value="#{item.PROYECTOidPROYECTO} "/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
@@ -96,7 +96,7 @@
                 <h:commandLink action="#{facturacionProyectoController.prepareCreate}" value="#{bundle.ListFacturacionProyectoCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ListFacturacionProyectoIndexLink}"/>
+                <h:link outcome="MenuAdmin" value="#{bundle.ListFacturacionProyectoIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

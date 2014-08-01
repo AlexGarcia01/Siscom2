@@ -22,12 +22,6 @@
                     <h:dataTable value="#{usuariosController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
-                                <h:outputText value="#{bundle.ListUsuariosTitle_idUSUARIOS}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.idUSUARIOS}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
                                 <h:outputText value="#{bundle.ListUsuariosTitle_nombre}"/>
                             </f:facet>
                             <h:outputText value="#{item.nombre}"/>
@@ -96,13 +90,13 @@
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListUsuariosTitle_PUESTOSidPUESTOS}"/>
                             </f:facet>
-                            <h:outputText value="#{item.PUESTOSidPUESTOS}"/>
+                            <h:outputText value="#{item.PUESTOSidPUESTOS} "/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListUsuariosTitle_AREAidAREA}"/>
                             </f:facet>
-                            <h:outputText value="#{item.AREAidAREA}"/>
+                            <h:outputText value="#{item.AREAidAREA}  "/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
@@ -120,7 +114,7 @@
                 <h:commandLink action="#{usuariosController.prepareCreate}" value="#{bundle.ListUsuariosCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ListUsuariosIndexLink}"/>
+                <h:link outcome="MenuAdmin" value="#{bundle.ListUsuariosIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

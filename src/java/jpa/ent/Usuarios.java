@@ -294,7 +294,8 @@ public class Usuarios implements Serializable {
 
     @Override
     public String toString() {
-        return "jpa.ent.Usuarios[ idUSUARIOS=" + idUSUARIOS + " ]";
+       // return "jpa.ent.Usuarios[ idUSUARIOS=" + idUSUARIOS + " ]";
+        return nombre;
     }
     
 }

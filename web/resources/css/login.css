@@ -1,0 +1,31 @@
+root { 
+    display: block;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    background-color: #fefeff;
+    font-size: small;
+}
+
+.SectionLogin{
+   width: 300px;
+    margin: 60px auto;
+    padding: 20px;
+    background: #EEE;
+    overflow: hidden;    
+}
+.FormLogin{
+     width: 88%;
+    float: left;
+    text-align: right;
+}
+img {
+    alignment-baseline: middle;
+    alignment-adjust: baseline;
+    display:block;margin:0 auto 0 auto;
+}
+.button{
+    alignment-baseline: middle;
+}

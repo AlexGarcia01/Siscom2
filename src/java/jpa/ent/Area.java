@@ -131,7 +131,8 @@ public class Area implements Serializable {
 
     @Override
     public String toString() {
-        return "jpa.ent.Area[ idAREA=" + idAREA + " ]";
+       // return "jpa.ent.Area[ idAREA=" + idAREA + " ]";
+        return nombreArea;
     }
     
 }

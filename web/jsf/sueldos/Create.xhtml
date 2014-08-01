@@ -19,11 +19,11 @@
                     <h:inputText id="idSUELDOS" value="#{sueldosController.selected.idSUELDOS}" title="#{bundle.CreateSueldosTitle_idSUELDOS}" required="true" requiredMessage="#{bundle.CreateSueldosRequiredMessage_idSUELDOS}"/>
                     <h:outputLabel value="#{bundle.CreateSueldosLabel_fechaInicio}" for="fechaInicio" />
                     <h:inputText id="fechaInicio" value="#{sueldosController.selected.fechaInicio}" title="#{bundle.CreateSueldosTitle_fechaInicio}" required="true" requiredMessage="#{bundle.CreateSueldosRequiredMessage_fechaInicio}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
                     </h:inputText>
                     <h:outputLabel value="#{bundle.CreateSueldosLabel_fechaFin}" for="fechaFin" />
                     <h:inputText id="fechaFin" value="#{sueldosController.selected.fechaFin}" title="#{bundle.CreateSueldosTitle_fechaFin}" required="true" requiredMessage="#{bundle.CreateSueldosRequiredMessage_fechaFin}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
                     </h:inputText>
                     <h:outputLabel value="#{bundle.CreateSueldosLabel_TABSUELDOSidTABSUELDOS}" for="TABSUELDOSidTABSUELDOS" />
                     <h:selectOneMenu id="TABSUELDOSidTABSUELDOS" value="#{sueldosController.selected.TABSUELDOSidTABSUELDOS}" title="#{bundle.CreateSueldosTitle_TABSUELDOSidTABSUELDOS}" required="true" requiredMessage="#{bundle.CreateSueldosRequiredMessage_TABSUELDOSidTABSUELDOS}">
@@ -37,7 +37,7 @@
                 <h:commandLink action="#{sueldosController.prepareList}" value="#{bundle.CreateSueldosShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateSueldosIndexLink}"/>
+                <h:link outcome="MenuAdmin" value="#{bundle.CreateSueldosIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

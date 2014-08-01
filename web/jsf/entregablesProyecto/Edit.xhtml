@@ -21,7 +21,7 @@
                     <h:inputText id="descripcion" value="#{entregablesProyectoController.selected.descripcion}" title="#{bundle.EditEntregablesProyectoTitle_descripcion}" required="true" requiredMessage="#{bundle.EditEntregablesProyectoRequiredMessage_descripcion}"/>
                     <h:outputLabel value="#{bundle.EditEntregablesProyectoLabel_fechaEnt}" for="fechaEnt" />
                     <h:inputText id="fechaEnt" value="#{entregablesProyectoController.selected.fechaEnt}" title="#{bundle.EditEntregablesProyectoTitle_fechaEnt}" required="true" requiredMessage="#{bundle.EditEntregablesProyectoRequiredMessage_fechaEnt}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
                     </h:inputText>
                     <h:outputLabel value="#{bundle.EditEntregablesProyectoLabel_monto}" for="monto" />
                     <h:inputText id="monto" value="#{entregablesProyectoController.selected.monto}" title="#{bundle.EditEntregablesProyectoTitle_monto}" required="true" requiredMessage="#{bundle.EditEntregablesProyectoRequiredMessage_monto}"/>
@@ -46,7 +46,7 @@
                 <h:commandLink action="#{entregablesProyectoController.prepareList}" value="#{bundle.EditEntregablesProyectoShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.EditEntregablesProyectoIndexLink}" />
+                <h:link outcome="MenuAdmin" value="#{bundle.EditEntregablesProyectoIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

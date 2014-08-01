@@ -23,18 +23,18 @@
                     <h:inputText id="compañia" value="#{proyectoController.selected.compañia}" title="#{bundle.EditProyectoTitle_compañia}" required="true" requiredMessage="#{bundle.EditProyectoRequiredMessage_compañia}"/>
                     <h:outputLabel value="#{bundle.EditProyectoLabel_fechaInicio}" for="fechaInicio" />
                     <h:inputText id="fechaInicio" value="#{proyectoController.selected.fechaInicio}" title="#{bundle.EditProyectoTitle_fechaInicio}" required="true" requiredMessage="#{bundle.EditProyectoRequiredMessage_fechaInicio}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
                     </h:inputText>
                     <h:outputLabel value="#{bundle.EditProyectoLabel_fechaFin}" for="fechaFin" />
                     <h:inputText id="fechaFin" value="#{proyectoController.selected.fechaFin}" title="#{bundle.EditProyectoTitle_fechaFin}" required="true" requiredMessage="#{bundle.EditProyectoRequiredMessage_fechaFin}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
                     </h:inputText>
                     <h:outputLabel value="#{bundle.EditProyectoLabel_AREAidAREA}" for="AREAidAREA" />
                     <h:selectOneMenu id="AREAidAREA" value="#{proyectoController.selected.AREAidAREA}" title="#{bundle.EditProyectoTitle_AREAidAREA}" required="true" requiredMessage="#{bundle.EditProyectoRequiredMessage_AREAidAREA}">
                         <f:selectItems value="#{areaController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.EditProyectoLabel_TIPOPROYECTOidTIPOPROYECTO}" for="TIPOPROYECTOidTIPOPROYECTO" />
-                    <h:selectOneMenu id="TIPOPROYECTOidTIPOPROYECTO" value="#{proyectoController.selected.TIPOPROYECTOidTIPOPROYECTO}" title="#{bundle.EditProyectoTitle_TIPOPROYECTOidTIPOPROYECTO}" required="true" requiredMessage="#{bundle.EditProyectoRequiredMessage_TIPOPROYECTOidTIPOPROYECTO}">
+                    <h:outputLabel value="#{bundle.EditProyectoLabel_TIPOPROYECTOidTIPOPROYECTO} " for="TIPOPROYECTOidTIPOPROYECTO" />
+                    <h:selectOneMenu id="TIPOPROYECTOidTIPOPROYECTO" value="#{proyectoController.selected.TIPOPROYECTOidTIPOPROYECTO} " title="#{bundle.EditProyectoTitle_TIPOPROYECTOidTIPOPROYECTO} " required="true" requiredMessage="#{bundle.EditProyectoRequiredMessage_TIPOPROYECTOidTIPOPROYECTO} ">
                         <f:selectItems value="#{tipoProyectoController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
                 </h:panelGrid>
@@ -46,7 +46,7 @@
                 <h:commandLink action="#{proyectoController.prepareList}" value="#{bundle.EditProyectoShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.EditProyectoIndexLink}" />
+                <h:link outcome="MenuAdmin" value="#{bundle.EditProyectoIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

@@ -19,11 +19,11 @@
                     <h:outputText value="#{recursoAsignadoProyectoController.selected.idRECURSOASIGNADOPROYECTO}" title="#{bundle.ViewRecursoAsignadoProyectoTitle_idRECURSOASIGNADOPROYECTO}"/>
                     <h:outputText value="#{bundle.ViewRecursoAsignadoProyectoLabel_fechaInicio}"/>
                     <h:outputText value="#{recursoAsignadoProyectoController.selected.fechaInicio}" title="#{bundle.ViewRecursoAsignadoProyectoTitle_fechaInicio}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
                     </h:outputText>
                     <h:outputText value="#{bundle.ViewRecursoAsignadoProyectoLabel_fechaFin}"/>
                     <h:outputText value="#{recursoAsignadoProyectoController.selected.fechaFin}" title="#{bundle.ViewRecursoAsignadoProyectoTitle_fechaFin}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
                     </h:outputText>
                     <h:outputText value="#{bundle.ViewRecursoAsignadoProyectoLabel_superior}"/>
                     <h:outputText value="#{recursoAsignadoProyectoController.selected.superior}" title="#{bundle.ViewRecursoAsignadoProyectoTitle_superior}"/>
@@ -47,7 +47,7 @@
                 <h:commandLink action="#{recursoAsignadoProyectoController.prepareList}" value="#{bundle.ViewRecursoAsignadoProyectoShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ViewRecursoAsignadoProyectoIndexLink}"/>
+                <h:link outcome="MenuAdmin" value="#{bundle.ViewRecursoAsignadoProyectoIndexLink}"/>
 
             </h:form>
         </ui:define>

@@ -37,7 +37,7 @@
                                 <h:outputText value="#{bundle.ListEntregablesProyectoTitle_fechaEnt}"/>
                             </f:facet>
                             <h:outputText value="#{item.fechaEnt}">
-                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                                <f:convertDateTime pattern="yyyy-MM-dd" />
                             </h:outputText>
                         </h:column>
                         <h:column>
@@ -62,7 +62,7 @@
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListEntregablesProyectoTitle_PROYECTOidPROYECTO}"/>
                             </f:facet>
-                            <h:outputText value="#{item.PROYECTOidPROYECTO}"/>
+                            <h:outputText value="#{item.PROYECTOidPROYECTO} "/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
@@ -86,7 +86,7 @@
                 <h:commandLink action="#{entregablesProyectoController.prepareCreate}" value="#{bundle.ListEntregablesProyectoCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ListEntregablesProyectoIndexLink}"/>
+                <h:link outcome="MenuAdmin" value="#{bundle.ListEntregablesProyectoIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

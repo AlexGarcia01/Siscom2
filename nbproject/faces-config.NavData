@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only">
+        <Node id="index.xhtml" x="150" y="1500" zoom="true"/>
+        <Node id="*" x="1150" y="1200" zoom="true"/>
+        <Node id="MenuAdmin.xhtml" x="1650" y="450" zoom="true"/>
+    </Scope>
+    <Scope Scope="Project">
+        <Node id="jsf/sueldos/Edit.xhtml" x="650" y="1200" zoom="true"/>
+        <Node id="jsf/recursoAsignadoProyecto/Create.xhtml" x="400" y="450" zoom="true"/>
+        <Node id="jsf/recursosProyecto/Edit.xhtml" x="150" y="750" zoom="true"/>
+        <Node id="jsf/entregablesProyecto/List.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="jsf/sueldos/List.xhtml" x="2900" y="150" zoom="true"/>
+        <Node id="jsf/horasRoyecto/Create.xhtml" x="1400" y="900" zoom="true"/>
+        <Node id="jsf/area/Create.xhtml" x="1400" y="750" zoom="true"/>
+        <Node id="jsf/facturacionProyecto/View.xhtml" x="1650" y="750" zoom="true"/>
+        <Node id="jsf/recursoAsignadoProyecto/View.xhtml" x="1900" y="600" zoom="true"/>
+        <Node id="jsf/area/View.xhtml" x="650" y="1050" zoom="true"/>
+        <Node id="jsf/password/Edit.xhtml" x="650" y="450" zoom="true"/>
+        <Node id="jsf/usuarios/View.xhtml" x="1900" y="150" zoom="true"/>
+        <Node id="jsf/recursoAsignadoProyecto/Edit.xhtml" x="1650" y="150" zoom="true"/>
+        <Node id="jsf/entregablesProyecto/Create.xhtml" x="1150" y="1050" zoom="true"/>
+        <Node id="jsf/tipoProyecto/List.xhtml" x="1650" y="300" zoom="true"/>
+        <Node id="jsf/usuarios/Create.xhtml" x="400" y="1500" zoom="true"/>
+        <Node id="jsf/periodos/Edit.xhtml" x="650" y="600" zoom="true"/>
+        <Node id="jsf/periodos/View.xhtml" x="900" y="450" zoom="true"/>
+        <Node id="jsf/puestos/Create.xhtml" x="1150" y="900" zoom="true"/>
+        <Node id="*" x="150" y="900" zoom="true"/>
+        <Node id="jsf/recursosProyecto/List.xhtml" x="1150" y="750" zoom="true"/>
+        <Node id="jsf/usuarios/Edit.xhtml" x="650" y="1350" zoom="true"/>
+        <Node id="jsf/gastoProyectos/Edit.xhtml" x="1150" y="450" zoom="true"/>
+        <Node id="jsf/periodos/List.xhtml" x="1650" y="600" zoom="true"/>
+        <Node id="jsf/recursoAsignadoProyecto/List.xhtml" x="900" y="300" zoom="true"/>
+        <Node id="jsf/sueldos/View.xhtml" x="150" y="1350" zoom="true"/>
+        <Node id="jsf/facturacionProyecto/Edit.xhtml" x="1150" y="150" zoom="true"/>
+        <Node id="jsf/tabSueldos/Create.xhtml" x="400" y="1350" zoom="true"/>
+        <Node id="menu1.xhtml" x="150" y="1200" zoom="true"/>
+        <Node id="jsf/tabSueldos/View.xhtml" x="2150" y="450" zoom="true"/>
+        <Node id="jsf/puestos/View.xhtml" x="1400" y="450" zoom="true"/>
+        <Node id="template.xhtml" x="900" y="1200" zoom="true"/>
+        <Node id="jsf/productos/Create.xhtml" x="400" y="1200" zoom="true"/>
+        <Node id="jsf/tipoGastos/Create.xhtml" x="900" y="150" zoom="true"/>
+        <Node id="jsf/facturacionProyecto/List.xhtml" x="400" y="750" zoom="true"/>
+        <Node id="jsf/productos/List.xhtml" x="1900" y="300" zoom="true"/>
+        <Node id="jsf/proyecto/Edit.xhtml" x="150" y="450" zoom="true"/>
+        <Node id="jsf/gastoProyectos/Create.xhtml" x="2400" y="150" zoom="true"/>
+        <Node id="jsf/puestos/Edit.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="jsf/entregablesProyecto/Edit.xhtml" x="2650" y="300" zoom="true"/>
+        <Node id="jsf/gastoProyectos/View.xhtml" x="400" y="600" zoom="true"/>
+        <Node id="jsf/tipoGastos/View.xhtml" x="1219" y="1182" zoom="true"/>
+        <Node id="jsf/horasRoyecto/Edit.xhtml" x="150" y="1050" zoom="true"/>
+        <Node id="jsf/sueldos/Create.xhtml" x="1150" y="600" zoom="true"/>
+        <Node id="jsf/tabSueldos/List.xhtml" x="650" y="900" zoom="true"/>
+        <Node id="MenuAdmin.xhtml" x="400" y="900" zoom="true"/>
+        <Node id="jsf/gastoProyectos/List.xhtml" x="1400" y="300" zoom="true"/>
+        <Node id="jsf/proyecto/Create.xhtml" x="1400" y="1050" zoom="true"/>
+        <Node id="jsf/area/List.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="jsf/usuarios/List.xhtml" x="150" y="1650" zoom="true"/>
+        <Node id="jsf/entregablesProyecto/View.xhtml" x="2150" y="300" zoom="true"/>
+        <Node id="jsf/productos/Edit.xhtml" x="1150" y="300" zoom="true"/>
+        <Node id="jsf/tabSueldos/Edit.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="jsf/tipoProyecto/Create.xhtml" x="650" y="300" zoom="true"/>
+        <Node id="jsf/password/List.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="jsf/puestos/List.xhtml" x="2150" y="600" zoom="true"/>
+        <Node id="jsf/facturacionProyecto/Create.xhtml" x="1400" y="150" zoom="true"/>
+        <Node id="jsf/area/Edit.xhtml" x="2150" y="150" zoom="true"/>
+        <Node id="jsf/tipoProyecto/View.xhtml" x="2650" y="150" zoom="true"/>
+        <Node id="jsf/proyecto/List.xhtml" x="900" y="1050" zoom="true"/>
+        <Node id="jsf/periodos/Create.xhtml" x="1400" y="600" zoom="true"/>
+        <Node id="jsf/tipoProyecto/Edit.xhtml" x="900" y="600" zoom="true"/>
+        <Node id="jsf/recursosProyecto/Create.xhtml" x="1900" y="750" zoom="true"/>
+        <Node id="index.xhtml" x="1650" y="900" zoom="true"/>
+        <Node id="jsf/password/Create.xhtml" x="900" y="750" zoom="true"/>
+        <Node id="jsf/tipoGastos/List.xhtml" x="1900" y="450" zoom="true"/>
+        <Node id="jsf/productos/View.xhtml" x="650" y="750" zoom="true"/>
+        <Node id="jsf/horasRoyecto/List.xhtml" x="400" y="1050" zoom="true"/>
+        <Node id="jsf/password/View.xhtml" x="2400" y="450" zoom="true"/>
+        <Node id="jsf/recursosProyecto/View.xhtml" x="2400" y="300" zoom="true"/>
+        <Node id="jsf/proyecto/View.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="jsf/tipoGastos/Edit.xhtml" x="900" y="900" zoom="true"/>
+        <Node id="jsf/horasRoyecto/View.xhtml" x="1650" y="450" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>

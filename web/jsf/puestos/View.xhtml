@@ -23,14 +23,14 @@
                     <h:outputText value="#{puestosController.selected.nivel}" title="#{bundle.ViewPuestosTitle_nivel}"/>
                     <h:outputText value="#{bundle.ViewPuestosLabel_fechaInicio}"/>
                     <h:outputText value="#{puestosController.selected.fechaInicio}" title="#{bundle.ViewPuestosTitle_fechaInicio}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
                     </h:outputText>
                     <h:outputText value="#{bundle.ViewPuestosLabel_fechaFin}"/>
                     <h:outputText value="#{puestosController.selected.fechaFin}" title="#{bundle.ViewPuestosTitle_fechaFin}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
                     </h:outputText>
                     <h:outputText value="#{bundle.ViewPuestosLabel_AREAidAREA}"/>
-                    <h:outputText value="#{puestosController.selected.AREAidAREA}" title="#{bundle.ViewPuestosTitle_AREAidAREA}"/>
+                    <h:outputText value="#{puestosController.selected.AREAidAREA} " title="#{bundle.ViewPuestosTitle_AREAidAREA}"/>
                 </h:panelGrid>
                 <br />
                 <h:commandLink action="#{puestosController.destroyAndView}" value="#{bundle.ViewPuestosDestroyLink}"/>
@@ -43,7 +43,7 @@
                 <h:commandLink action="#{puestosController.prepareList}" value="#{bundle.ViewPuestosShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ViewPuestosIndexLink}"/>
+                <h:link outcome="MenuAdmin" value="#{bundle.ViewPuestosIndexLink}"/>
 
             </h:form>
         </ui:define>

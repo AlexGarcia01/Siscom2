@@ -31,7 +31,7 @@
                                 <h:outputText value="#{bundle.ListRecursoAsignadoProyectoTitle_fechaInicio}"/>
                             </f:facet>
                             <h:outputText value="#{item.fechaInicio}">
-                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                                <f:convertDateTime pattern="yyyy-MM-dd" />
                             </h:outputText>
                         </h:column>
                         <h:column>
@@ -39,7 +39,7 @@
                                 <h:outputText value="#{bundle.ListRecursoAsignadoProyectoTitle_fechaFin}"/>
                             </f:facet>
                             <h:outputText value="#{item.fechaFin}">
-                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                                <f:convertDateTime pattern="yyyy-MM-dd" />
                             </h:outputText>
                         </h:column>
                         <h:column>
@@ -64,13 +64,13 @@
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListRecursoAsignadoProyectoTitle_PROYECTOidPROYECTO}"/>
                             </f:facet>
-                            <h:outputText value="#{item.PROYECTOidPROYECTO}"/>
+                            <h:outputText value="#{item.PROYECTOidPROYECTO} "/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListRecursoAsignadoProyectoTitle_USUARIOSidUSUARIOS}"/>
                             </f:facet>
-                            <h:outputText value="#{item.USUARIOSidUSUARIOS}"/>
+                            <h:outputText value="#{item.USUARIOSidUSUARIOS} "/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
@@ -88,7 +88,7 @@
                 <h:commandLink action="#{recursoAsignadoProyectoController.prepareCreate}" value="#{bundle.ListRecursoAsignadoProyectoCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ListRecursoAsignadoProyectoIndexLink}"/>
+                <h:link outcome="MenuAdmin" value="#{bundle.ListRecursoAsignadoProyectoIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

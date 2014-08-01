@@ -21,15 +21,15 @@
                     <h:outputText value="#{passwordController.selected.password}" title="#{bundle.ViewPasswordTitle_password}"/>
                     <h:outputText value="#{bundle.ViewPasswordLabel_fecheInicio}"/>
                     <h:outputText value="#{passwordController.selected.fecheInicio}" title="#{bundle.ViewPasswordTitle_fecheInicio}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
                     </h:outputText>
                     <h:outputText value="#{bundle.ViewPasswordLabel_fechaFin}"/>
                     <h:outputText value="#{passwordController.selected.fechaFin}" title="#{bundle.ViewPasswordTitle_fechaFin}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
                     </h:outputText>
                     <h:outputText value="#{bundle.ViewPasswordLabel_fechaCaducidad}"/>
                     <h:outputText value="#{passwordController.selected.fechaCaducidad}" title="#{bundle.ViewPasswordTitle_fechaCaducidad}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
                     </h:outputText>
                     <h:outputText value="#{bundle.ViewPasswordLabel_tipoUsuario}"/>
                     <h:outputText value="#{passwordController.selected.tipoUsuario}" title="#{bundle.ViewPasswordTitle_tipoUsuario}"/>
@@ -47,7 +47,7 @@
                 <h:commandLink action="#{passwordController.prepareList}" value="#{bundle.ViewPasswordShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ViewPasswordIndexLink}"/>
+                <h:link outcome="MenuAdmin" value="#{bundle.ViewPasswordIndexLink}"/>
 
             </h:form>
         </ui:define>

@@ -19,11 +19,11 @@
                     <h:inputText id="idPERIODOS" value="#{periodosController.selected.idPERIODOS}" title="#{bundle.CreatePeriodosTitle_idPERIODOS}" required="true" requiredMessage="#{bundle.CreatePeriodosRequiredMessage_idPERIODOS}"/>
                     <h:outputLabel value="#{bundle.CreatePeriodosLabel_fechaInicio}" for="fechaInicio" />
                     <h:inputText id="fechaInicio" value="#{periodosController.selected.fechaInicio}" title="#{bundle.CreatePeriodosTitle_fechaInicio}" required="true" requiredMessage="#{bundle.CreatePeriodosRequiredMessage_fechaInicio}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
                     </h:inputText>
                     <h:outputLabel value="#{bundle.CreatePeriodosLabel_fechaFin}" for="fechaFin" />
                     <h:inputText id="fechaFin" value="#{periodosController.selected.fechaFin}" title="#{bundle.CreatePeriodosTitle_fechaFin}" required="true" requiredMessage="#{bundle.CreatePeriodosRequiredMessage_fechaFin}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
                     </h:inputText>
                     <h:outputLabel value="#{bundle.CreatePeriodosLabel_semana}" for="semana" />
                     <h:inputText id="semana" value="#{periodosController.selected.semana}" title="#{bundle.CreatePeriodosTitle_semana}" required="true" requiredMessage="#{bundle.CreatePeriodosRequiredMessage_semana}"/>
@@ -35,7 +35,7 @@
                 <h:commandLink action="#{periodosController.prepareList}" value="#{bundle.CreatePeriodosShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreatePeriodosIndexLink}"/>
+                <h:link outcome="MenuAdmin" value="#{bundle.CreatePeriodosIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

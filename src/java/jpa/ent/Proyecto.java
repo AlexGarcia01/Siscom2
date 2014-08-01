@@ -236,7 +236,8 @@ public class Proyecto implements Serializable {
 
     @Override
     public String toString() {
-        return "jpa.ent.Proyecto[ idPROYECTO=" + idPROYECTO + " ]";
+        //return "jpa.ent.Proyecto[ idPROYECTO=" + idPROYECTO + " ]";
+        return nombre;
     }
     
 }

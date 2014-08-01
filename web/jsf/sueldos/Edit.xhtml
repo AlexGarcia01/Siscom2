@@ -19,11 +19,11 @@
                     <h:inputText id="idSUELDOS" value="#{sueldosController.selected.idSUELDOS}" title="#{bundle.EditSueldosTitle_idSUELDOS}" required="true" requiredMessage="#{bundle.EditSueldosRequiredMessage_idSUELDOS}"/>
                     <h:outputLabel value="#{bundle.EditSueldosLabel_fechaInicio}" for="fechaInicio" />
                     <h:inputText id="fechaInicio" value="#{sueldosController.selected.fechaInicio}" title="#{bundle.EditSueldosTitle_fechaInicio}" required="true" requiredMessage="#{bundle.EditSueldosRequiredMessage_fechaInicio}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
                     </h:inputText>
                     <h:outputLabel value="#{bundle.EditSueldosLabel_fechaFin}" for="fechaFin" />
                     <h:inputText id="fechaFin" value="#{sueldosController.selected.fechaFin}" title="#{bundle.EditSueldosTitle_fechaFin}" required="true" requiredMessage="#{bundle.EditSueldosRequiredMessage_fechaFin}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
                     </h:inputText>
                     <h:outputLabel value="#{bundle.EditSueldosLabel_TABSUELDOSidTABSUELDOS}" for="TABSUELDOSidTABSUELDOS" />
                     <h:selectOneMenu id="TABSUELDOSidTABSUELDOS" value="#{sueldosController.selected.TABSUELDOSidTABSUELDOS}" title="#{bundle.EditSueldosTitle_TABSUELDOSidTABSUELDOS}" required="true" requiredMessage="#{bundle.EditSueldosRequiredMessage_TABSUELDOSidTABSUELDOS}">
@@ -38,7 +38,7 @@
                 <h:commandLink action="#{sueldosController.prepareList}" value="#{bundle.EditSueldosShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.EditSueldosIndexLink}" />
+                <h:link outcome="MenuAdmin" value="#{bundle.EditSueldosIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

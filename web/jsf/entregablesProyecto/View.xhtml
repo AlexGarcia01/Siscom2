@@ -21,7 +21,7 @@
                     <h:outputText value="#{entregablesProyectoController.selected.descripcion}" title="#{bundle.ViewEntregablesProyectoTitle_descripcion}"/>
                     <h:outputText value="#{bundle.ViewEntregablesProyectoLabel_fechaEnt}"/>
                     <h:outputText value="#{entregablesProyectoController.selected.fechaEnt}" title="#{bundle.ViewEntregablesProyectoTitle_fechaEnt}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
                     </h:outputText>
                     <h:outputText value="#{bundle.ViewEntregablesProyectoLabel_monto}"/>
                     <h:outputText value="#{entregablesProyectoController.selected.monto}" title="#{bundle.ViewEntregablesProyectoTitle_monto}"/>
@@ -45,7 +45,7 @@
                 <h:commandLink action="#{entregablesProyectoController.prepareList}" value="#{bundle.ViewEntregablesProyectoShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ViewEntregablesProyectoIndexLink}"/>
+                <h:link outcome="MenuAdmin" value="#{bundle.ViewEntregablesProyectoIndexLink}"/>
 
             </h:form>
         </ui:define>

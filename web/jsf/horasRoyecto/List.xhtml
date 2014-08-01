@@ -42,13 +42,13 @@
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListHorasRoyectoTitle_PROYECTOidPROYECTO}"/>
                             </f:facet>
-                            <h:outputText value="#{item.PROYECTOidPROYECTO}"/>
+                            <h:outputText value="#{item.PROYECTOidPROYECTO} "/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListHorasRoyectoTitle_USUARIOSidUSUARIOS}"/>
                             </f:facet>
-                            <h:outputText value="#{item.USUARIOSidUSUARIOS}"/>
+                            <h:outputText value="#{item.USUARIOSidUSUARIOS} "/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
@@ -72,7 +72,7 @@
                 <h:commandLink action="#{horasRoyectoController.prepareCreate}" value="#{bundle.ListHorasRoyectoCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ListHorasRoyectoIndexLink}"/>
+                <h:link outcome="MenuAdmin" value="#{bundle.ListHorasRoyectoIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

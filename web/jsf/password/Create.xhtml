@@ -21,15 +21,15 @@
                     <h:inputText id="password" value="#{passwordController.selected.password}" title="#{bundle.CreatePasswordTitle_password}" required="true" requiredMessage="#{bundle.CreatePasswordRequiredMessage_password}"/>
                     <h:outputLabel value="#{bundle.CreatePasswordLabel_fecheInicio}" for="fecheInicio" />
                     <h:inputText id="fecheInicio" value="#{passwordController.selected.fecheInicio}" title="#{bundle.CreatePasswordTitle_fecheInicio}" required="true" requiredMessage="#{bundle.CreatePasswordRequiredMessage_fecheInicio}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
                     </h:inputText>
                     <h:outputLabel value="#{bundle.CreatePasswordLabel_fechaFin}" for="fechaFin" />
                     <h:inputText id="fechaFin" value="#{passwordController.selected.fechaFin}" title="#{bundle.CreatePasswordTitle_fechaFin}" required="true" requiredMessage="#{bundle.CreatePasswordRequiredMessage_fechaFin}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
                     </h:inputText>
                     <h:outputLabel value="#{bundle.CreatePasswordLabel_fechaCaducidad}" for="fechaCaducidad" />
                     <h:inputText id="fechaCaducidad" value="#{passwordController.selected.fechaCaducidad}" title="#{bundle.CreatePasswordTitle_fechaCaducidad}" required="true" requiredMessage="#{bundle.CreatePasswordRequiredMessage_fechaCaducidad}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
                     </h:inputText>
                     <h:outputLabel value="#{bundle.CreatePasswordLabel_tipoUsuario}" for="tipoUsuario" />
                     <h:inputText id="tipoUsuario" value="#{passwordController.selected.tipoUsuario}" title="#{bundle.CreatePasswordTitle_tipoUsuario}" required="true" requiredMessage="#{bundle.CreatePasswordRequiredMessage_tipoUsuario}"/>
@@ -45,7 +45,7 @@
                 <h:commandLink action="#{passwordController.prepareList}" value="#{bundle.CreatePasswordShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreatePasswordIndexLink}"/>
+                <h:link outcome="MenuAdmin" value="#{bundle.CreatePasswordIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

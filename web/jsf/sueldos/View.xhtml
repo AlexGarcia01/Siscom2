@@ -19,11 +19,11 @@
                     <h:outputText value="#{sueldosController.selected.idSUELDOS}" title="#{bundle.ViewSueldosTitle_idSUELDOS}"/>
                     <h:outputText value="#{bundle.ViewSueldosLabel_fechaInicio}"/>
                     <h:outputText value="#{sueldosController.selected.fechaInicio}" title="#{bundle.ViewSueldosTitle_fechaInicio}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
                     </h:outputText>
                     <h:outputText value="#{bundle.ViewSueldosLabel_fechaFin}"/>
                     <h:outputText value="#{sueldosController.selected.fechaFin}" title="#{bundle.ViewSueldosTitle_fechaFin}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
                     </h:outputText>
                     <h:outputText value="#{bundle.ViewSueldosLabel_TABSUELDOSidTABSUELDOS}"/>
                     <h:outputText value="#{sueldosController.selected.TABSUELDOSidTABSUELDOS}" title="#{bundle.ViewSueldosTitle_TABSUELDOSidTABSUELDOS}"/>
@@ -39,7 +39,7 @@
                 <h:commandLink action="#{sueldosController.prepareList}" value="#{bundle.ViewSueldosShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ViewSueldosIndexLink}"/>
+                <h:link outcome="MenuAdmin" value="#{bundle.ViewSueldosIndexLink}"/>
 
             </h:form>
         </ui:define>

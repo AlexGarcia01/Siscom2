@@ -43,7 +43,7 @@
                                 <h:outputText value="#{bundle.ListPuestosTitle_fechaInicio}"/>
                             </f:facet>
                             <h:outputText value="#{item.fechaInicio}">
-                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                                <f:convertDateTime pattern="yyyy-MM-dd" />
                             </h:outputText>
                         </h:column>
                         <h:column>
@@ -51,14 +51,14 @@
                                 <h:outputText value="#{bundle.ListPuestosTitle_fechaFin}"/>
                             </f:facet>
                             <h:outputText value="#{item.fechaFin}">
-                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                                <f:convertDateTime pattern="yyyy-MM-dd" />
                             </h:outputText>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListPuestosTitle_AREAidAREA}"/>
                             </f:facet>
-                            <h:outputText value="#{item.AREAidAREA}"/>
+                            <h:outputText value="#{item.AREAidAREA}  "/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
@@ -76,7 +76,7 @@
                 <h:commandLink action="#{puestosController.prepareCreate}" value="#{bundle.ListPuestosCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ListPuestosIndexLink}"/>
+                <h:link outcome="MenuAdmin" value="#{bundle.ListPuestosIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

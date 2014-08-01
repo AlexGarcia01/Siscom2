@@ -185,7 +185,8 @@ public class Puestos implements Serializable {
 
     @Override
     public String toString() {
-        return "jpa.ent.Puestos[ idPUESTOS=" + idPUESTOS + " ]";
+      //  return "jpa.ent.Puestos[ idPUESTOS=" + idPUESTOS + " ]";
+        return nombre;
     }
     
 }

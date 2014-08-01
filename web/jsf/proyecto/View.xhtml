@@ -23,16 +23,16 @@
                     <h:outputText value="#{proyectoController.selected.compañia}" title="#{bundle.ViewProyectoTitle_compañia}"/>
                     <h:outputText value="#{bundle.ViewProyectoLabel_fechaInicio}"/>
                     <h:outputText value="#{proyectoController.selected.fechaInicio}" title="#{bundle.ViewProyectoTitle_fechaInicio}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
                     </h:outputText>
                     <h:outputText value="#{bundle.ViewProyectoLabel_fechaFin}"/>
                     <h:outputText value="#{proyectoController.selected.fechaFin}" title="#{bundle.ViewProyectoTitle_fechaFin}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
                     </h:outputText>
                     <h:outputText value="#{bundle.ViewProyectoLabel_AREAidAREA}"/>
                     <h:outputText value="#{proyectoController.selected.AREAidAREA}" title="#{bundle.ViewProyectoTitle_AREAidAREA}"/>
-                    <h:outputText value="#{bundle.ViewProyectoLabel_TIPOPROYECTOidTIPOPROYECTO}"/>
-                    <h:outputText value="#{proyectoController.selected.TIPOPROYECTOidTIPOPROYECTO}" title="#{bundle.ViewProyectoTitle_TIPOPROYECTOidTIPOPROYECTO}"/>
+                    <h:outputText value="#{bundle.ViewProyectoLabel_TIPOPROYECTOidTIPOPROYECTO} "/>
+                    <h:outputText value="#{proyectoController.selected.TIPOPROYECTOidTIPOPROYECTO} " title="#{bundle.ViewProyectoTitle_TIPOPROYECTOidTIPOPROYECTO} "/>
                 </h:panelGrid>
                 <br />
                 <h:commandLink action="#{proyectoController.destroyAndView}" value="#{bundle.ViewProyectoDestroyLink}"/>
@@ -45,7 +45,7 @@
                 <h:commandLink action="#{proyectoController.prepareList}" value="#{bundle.ViewProyectoShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ViewProyectoIndexLink}"/>
+                <h:link outcome="MenuAdmin" value="#{bundle.ViewProyectoIndexLink}"/>
 
             </h:form>
         </ui:define>

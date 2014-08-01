@@ -15,7 +15,7 @@
             </h:panelGroup>
             <h:form>
                 <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateUsuariosLabel_idUSUARIOS}" for="idUSUARIOS" />
+                  <h:outputLabel value="#{bundle.CreateUsuariosLabel_idUSUARIOS}" for="idUSUARIOS" /> 
                     <h:inputText id="idUSUARIOS" value="#{usuariosController.selected.idUSUARIOS}" title="#{bundle.CreateUsuariosTitle_idUSUARIOS}" required="true" requiredMessage="#{bundle.CreateUsuariosRequiredMessage_idUSUARIOS}"/>
                     <h:outputLabel value="#{bundle.CreateUsuariosLabel_nombre}" for="nombre" />
                     <h:inputText id="nombre" value="#{usuariosController.selected.nombre}" title="#{bundle.CreateUsuariosTitle_nombre}" required="true" requiredMessage="#{bundle.CreateUsuariosRequiredMessage_nombre}"/>
@@ -55,7 +55,7 @@
                 <h:commandLink action="#{usuariosController.prepareList}" value="#{bundle.CreateUsuariosShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateUsuariosIndexLink}"/>
+                <h:link outcome="MenuAdmin" value="#{bundle.CreateUsuariosIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

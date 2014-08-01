@@ -109,7 +109,8 @@ public class TipoProyecto implements Serializable {
 
     @Override
     public String toString() {
-        return "jpa.ent.TipoProyecto[ idTIPOPROYECTO=" + idTIPOPROYECTO + " ]";
+       // return "jpa.ent.TipoProyecto[ idTIPOPROYECTO=" + idTIPOPROYECTO + " ]";
+        return descripcionProyecto;
     }
     
 }

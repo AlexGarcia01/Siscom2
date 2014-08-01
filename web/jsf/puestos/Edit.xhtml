@@ -23,11 +23,11 @@
                     <h:inputText id="nivel" value="#{puestosController.selected.nivel}" title="#{bundle.EditPuestosTitle_nivel}" required="true" requiredMessage="#{bundle.EditPuestosRequiredMessage_nivel}"/>
                     <h:outputLabel value="#{bundle.EditPuestosLabel_fechaInicio}" for="fechaInicio" />
                     <h:inputText id="fechaInicio" value="#{puestosController.selected.fechaInicio}" title="#{bundle.EditPuestosTitle_fechaInicio}" >
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
                     </h:inputText>
                     <h:outputLabel value="#{bundle.EditPuestosLabel_fechaFin}" for="fechaFin" />
                     <h:inputText id="fechaFin" value="#{puestosController.selected.fechaFin}" title="#{bundle.EditPuestosTitle_fechaFin}" >
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                        <f:convertDateTime pattern="yyyy-MM-dd" />
                     </h:inputText>
                     <h:outputLabel value="#{bundle.EditPuestosLabel_AREAidAREA}" for="AREAidAREA" />
                     <h:selectOneMenu id="AREAidAREA" value="#{puestosController.selected.AREAidAREA}" title="#{bundle.EditPuestosTitle_AREAidAREA}" required="true" requiredMessage="#{bundle.EditPuestosRequiredMessage_AREAidAREA}">
@@ -42,7 +42,7 @@
                 <h:commandLink action="#{puestosController.prepareList}" value="#{bundle.EditPuestosShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.EditPuestosIndexLink}" />
+                <h:link outcome="MenuAdmin" value="#{bundle.EditPuestosIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

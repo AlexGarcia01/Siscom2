@@ -20,12 +20,7 @@
                     <h:commandLink action="#{recursosProyectoController.previous}" value="#{bundle.Previous} #{recursosProyectoController.pagination.pageSize}" rendered="#{recursosProyectoController.pagination.hasPreviousPage}"/>&nbsp;
                     <h:commandLink action="#{recursosProyectoController.next}" value="#{bundle.Next} #{recursosProyectoController.pagination.pageSize}" rendered="#{recursosProyectoController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{recursosProyectoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListRecursosProyectoTitle_idRECURSOSPROYECTO}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.idRECURSOSPROYECTO}"/>
-                        </h:column>
+                        
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListRecursosProyectoTitle_tipoRecurso}"/>
@@ -42,13 +37,13 @@
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListRecursosProyectoTitle_PUESTOSidPUESTOS}"/>
                             </f:facet>
-                            <h:outputText value="#{item.PUESTOSidPUESTOS}"/>
+                            <h:outputText value="#{item.PUESTOSidPUESTOS} "/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{bundle.ListRecursosProyectoTitle_PROYECTOidPROYECTO}"/>
                             </f:facet>
-                            <h:outputText value="#{item.PROYECTOidPROYECTO}"/>
+                            <h:outputText value="#{item.PROYECTOidPROYECTO} "/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
@@ -66,7 +61,7 @@
                 <h:commandLink action="#{recursosProyectoController.prepareCreate}" value="#{bundle.ListRecursosProyectoCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ListRecursosProyectoIndexLink}"/>
+                <h:link outcome="MenuAdmin" value="#{bundle.ListRecursosProyectoIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

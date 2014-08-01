@@ -3,19 +3,119 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
+
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title><ui:insert name="title">Default Title</ui:insert></title>
-<h:outputStylesheet name="css/jsfcrud.css"/>
+        <h:outputStylesheet name="./css/default.css"/>
+         <h:outputStylesheet name="./css/newcssmaster.css"/>
+        <h:outputStylesheet name="./css/cssLayout.css" id="pagesheet"/>
+        <title>SisComAvansaas®</title>
     </h:head>
 
     <h:body>
-        <h1>
-            <ui:insert name="title">Default Title</ui:insert>
-        </h1>
-        <p>
+    <div class="clearfix" id="page"><!-- pagina -->
+       <ui:insert name="top">
+           <div class="clearfix colelem" id="pu108"><!-- group -->
+            <div class="clip_frame grpelem" id="u108"><!-- image -->
+             <h:graphicImage class="block" id="u108_img" library="./img" name="logoavansaas.png"/>
+            </div>
+            <div class="clearfix grpelem" id="pu106-4"><!-- column -->
+             <div class="clearfix colelem" id="u106-4"><!-- content -->
+              <p>Sistema de Comisiones Avansaas®</p>
+             </div>
+             <div class="clearfix colelem" id="u134-4"><!-- content -->
+              <p>Bienvenido</p>
+             </div>
+            </div>
+            <div class="clearfix grpelem" id="pu114"><!-- column -->
+             <div class="clip_frame colelem" id="u114"><!-- image -->
+               <h:graphicImage class="block" id="u114_img" library="./img" name="OraclePartner.gif" width="239" height="34"/>           
+             </div>
+             <div class="clearfix colelem" id="u136-5"><!-- content -->
+              
+                  <span id="u136-2"> 
+                      <h:form>
+                          Usuario: <h:outputText value="#{mbSessiones.usuario}"/>
+                      </h:form>
+                  </span>
+              
+                <li class="MenuItemContainer clearfix grpelem" id="u301"><!-- vertical box -->
+               <div class="MenuItem MenuItemWithSubMenu clearfix colelem" id="u302"><!-- horizontal box -->
+                <div class="MenuItemLabel NoWrap clearfix grpelem" id="u304-4"><!-- content -->
+                 <p>
+                 <h:form>
+                     <h:commandButton action="#{mbSessiones.cerrarSession()}" value="Salir" />
+                 </h:form>
+                 </p>
+                </div>
+               </div>
+                </li>
+             </div>
+            </div>
+           </div>
+                <!--menu.-->
+                   <ul class="MenuBar clearfix colelem" id="menuu218"><!-- horizontal box -->
+            <li class="MenuItemContainer clearfix grpelem" id="u301"><!-- vertical box -->
+             <div class="MenuItem MenuItemWithSubMenu clearfix colelem" id="u302"><!-- horizontal box -->
+              <div class="MenuItemLabel NoWrap clearfix grpelem" id="u304-4"><!-- content -->
+               <p><h:link outcome="/jsf/proyecto/List" value="Proyectos"/></p>
+              </div>
+             </div>
+            </li>
+            <li class="MenuItemContainer clearfix grpelem" id="u336"><!-- vertical box -->
+             <div class="MenuItem MenuItemWithSubMenu clearfix colelem" id="u337"><!-- horizontal box -->
+              <div class="MenuItemLabel NoWrap clearfix grpelem" id="u340-4"><!-- content -->
+               <p><h:link outcome="/jsf/usuarios/List" value="Usuarios"/></p>
+              </div>
+             </div>
+            </li>
+            <li class="MenuItemContainer clearfix grpelem" id="u329"><!-- vertical box -->
+             <div class="MenuItem MenuItemWithSubMenu clearfix colelem" id="u330"><!-- horizontal box -->
+              <div class="MenuItemLabel NoWrap clearfix grpelem" id="u333-4"><!-- content -->
+               <p><h:link outcome="/jsf/recursosProyecto/List" value="Recursos"/></p>
+              </div>
+             </div>
+            </li>
+            <li class="MenuItemContainer clearfix grpelem" id="u322"><!-- vertical box -->
+             <div class="MenuItem MenuItemWithSubMenu clearfix colelem" id="u323"><!-- horizontal box -->
+              <div class="MenuItemLabel NoWrap clearfix grpelem" id="u326-4"><!-- content -->
+               <p><h:link outcome="/jsf/facturacionProyecto/List" value="Facturacion"/></p>
+              </div>
+             </div>
+            </li>
+            <li class="MenuItemContainer clearfix grpelem" id="u315"><!-- vertical box -->
+             <div class="MenuItem MenuItemWithSubMenu clearfix colelem" id="u316"><!-- horizontal box -->
+              <div class="MenuItemLabel NoWrap clearfix grpelem" id="u319-4"><!-- content -->
+               <p><h:link outcome="/jsf/entregablesProyecto/List" value="Entregables"/></p>
+              </div>
+             </div>
+            </li>
+            <li class="MenuItemContainer clearfix grpelem" id="u308"><!-- vertical box -->
+             <div class="MenuItem MenuItemWithSubMenu clearfix colelem" id="u309"><!-- horizontal box -->
+              <div class="MenuItemLabel NoWrap clearfix grpelem" id="u312-4"><!-- content -->
+               <p><h:link outcome="/jsf/recursoAsignadoProyecto/List" value="RecursosAsignado"/></p>
+              </div>
+             </div>
+            </li>
+           </ul>
+       </ui:insert>
+        
+        <!--contenido-->
+         <div class="colelem" id="u137">
+             <!-- aqui va el contenido -->
+             <ui:insert name="content">Content </ui:insert>
+             <ui:insert name="title">Default Title</ui:insert>
+             <p>
             <ui:insert name="body">Default Body</ui:insert>
-        </p>
+             </p>
+         </div>
+         <div class="verticalspacer"></div>
+    <div id="bottom"><!-- pie de pagina -->
+            <ui:insert name="bottom">Bottom</ui:insert>
+    </div>
+   
+    </div><!-- pagina -->
+    
     </h:body>
 
 </html>
